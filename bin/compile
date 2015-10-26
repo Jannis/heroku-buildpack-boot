@@ -54,19 +54,15 @@ BOOT_SH_URL="https://github.com/boot-clj/boot/releases/download/${BOOT_SH_VERSIO
 BOOT_SH_CACHE_PATH="$CACHE_DIR/boot"
 BOOT_SH_SLUG_PATH="$BUILD_DIR/boot"
 
-echo "Temp dir:"
-ls -la "/app/tmp"
-echo
-
-echo "Cache dir:"
-ls -la "$CACHE_DIR"
-echo
+if [ ! -d "$CACHE_DIR" ]; then
+  echo "-----> Create cache directory"
+  mkdir -p "$CACHE_DIR"
+fi
 
 if [ ! -r "$BOOT_SH_CACHE_PATH" ]; then
     echo "-----> Installing Boot ${BOOT_SH_VERSION} from github..."
     echo "       Downloading boot.sh"
     echo "curl -L -o \"$BOOT_SH_CACHE_PATH\" \"$BOOT_SH_URL\""
-    echo "       Make it executable"
     chmod a+x "$BOOT_SH_CACHE_PATH"
     echo "       ...done"
 else
