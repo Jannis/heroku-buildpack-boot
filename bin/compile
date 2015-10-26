@@ -51,7 +51,7 @@ get_latest_boot_version() {
 }
 
 BOOT_SH_VERSION=$(get_latest_boot_version)
-BOOT_SH_URL="https://github.com/boot-clj/boot/releases/download/${BOOT_SH_VERSION}/boot.sh"
+BOOT_SH_URL="http://github.com/boot-clj/boot/releases/download/${BOOT_SH_VERSION}/boot.sh"
 BOOT_SH_CACHE_PATH="$CACHE_DIR/boot"
 BOOT_SH_SLUG_PATH="$BUILD_DIR/boot"
 
