@@ -6,6 +6,7 @@
 
 # fail fast
 set -e
+set -x
 
 # parse args
 export BUILD_DIR=$1
