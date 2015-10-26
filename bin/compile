@@ -64,7 +64,7 @@ fi
 if [ ! -r "$BOOT_SH_CACHE_PATH" ]; then
     echo "-----> Installing Boot ${BOOT_SH_VERSION} from github..."
     echo "       Downloading boot.sh"
-    curl -L \"$BOOT_SH_URL\" > \"$BOOT_SH_CACHE_PATH\"
+    curl -L -o "$BOOT_SH_CACHE_PATH" "$BOOT_SH_URL"
     chmod a+x "$BOOT_SH_CACHE_PATH"
     echo "       ...done"
 else
