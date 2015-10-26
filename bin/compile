@@ -119,8 +119,9 @@ if [ ! -r $BUILD_DIR/Procfile ]; then
     exit 1
 fi
 
-# Run "boot heroku-setup" to make dependencies available before running
-"$BUILD_DIR"/boot heroku-setup
+# Run "boot cljs" to make dependencies available before running
+ls -la "$BUILD_DIR"
+"$BUILD_DIR"/boot cljs
 
 # repack cache with new assets
 rm -rf $CACHE_STORE_DIR
