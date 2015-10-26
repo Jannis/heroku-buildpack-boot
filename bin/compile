@@ -99,10 +99,11 @@ else
     echo "       Running: $BUILD_COMMAND"
     cd $BUILD_DIR
     $BUILD_COMMAND 2>&1 | sed -u 's/^/       /'
-fi
-if [ "${PIPESTATUS[*]}" != "0 0" ]; then
-  echo " !     Failed to build."
-  exit 1
+
+    if [ "${PIPESTATUS[*]}" != "0 0" ]; then
+      echo " !     Failed to build."
+      exit 1
+    fi
 fi
 
 # populate profile.d
