@@ -58,6 +58,7 @@ BOOT_SH_SLUG_PATH="$BUILD_DIR/boot"
 if [ ! -d "$CACHE_DIR" ]; then
   echo "-----> Create cache directory $CACHE_DIR"
   mkdir -p "$CACHE_DIR"
+  ls -la "$CACHE_DIR"
 fi
 
 if [ ! -r "$BOOT_SH_CACHE_PATH" ]; then
