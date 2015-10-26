@@ -121,6 +121,7 @@ fi
 
 # Run "boot cljs" to make dependencies available before running
 ls -la "$BUILD_DIR"
+cd "$BUILD_DIR"
 "$BUILD_DIR"/boot cljs
 
 # repack cache with new assets
